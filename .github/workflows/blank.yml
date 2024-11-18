@@ -15,4 +15,4 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Build docker image
-        run: docker build -t ghcr.io/D1pper22D1p/new/students-node-330:latest ./node/
+        run: docker build -t ghcr.io/d1pper22d1p/new/students-node-330:latest ./node/
