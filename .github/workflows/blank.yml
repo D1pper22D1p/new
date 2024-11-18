@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build-node:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,7 +26,10 @@ jobs:
 
       - name: Push docker image
         run: docker push ghcr.io/d1pper22d1p/new/students-node-330:latest
+  build-python:
+    runs-on: ubuntu-latest
 
+    steps:
       - uses: actions/checkout@v4
 
       - name: Build docker image
