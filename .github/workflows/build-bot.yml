@@ -12,13 +12,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: send telegram message on push
-        uses: appleboy/telegram-action@master
-        with:
-          to: -4587543996
-          token: 7807568169:AAFEHwd6wujmyeC4j8VBQl-61H-HjxU4-z8
-          message: |
+        - name: Send Telegram message on push (Success)
+          if: success()
+          uses: appleboy/telegram-action@master
+          with:
+            to: -4587543996
+            token: 7807568169:AAFEHwd6wujmyeC4j8VBQl-61H-HjxU4-z8
+            message: "Сообщение (строка #2)"
+
+        - name: Send Telegram message on push (Failure)
           if: failure()
-            Сообщение (строка #1)
-          else:
-            Сообщение (строка #2)
+          uses: appleboy/telegram-action@master
+          with:
+            to: -4587543996
+            token: 7807568169:AAFEHwd6wujmyeC4j8VBQl-61H-HjxU4-z8
+            message: "Сообщение (строка #1)"
