@@ -1,0 +1,22 @@
+name: CI
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  build-node:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: send telegram message on push
+        uses: appleboy/telegram-action@master
+        with:
+          to: -4587543996
+          token: https://api.telegram.org/bot7807568169:AAFEHwd6wujmyeC4j8VBQl-61H-HjxU4-z8
+          message: |
+            Сообщение (строка #1)
+            Сообщение (строка #2)
