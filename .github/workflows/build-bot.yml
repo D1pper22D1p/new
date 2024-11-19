@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-node:
+  build-bot:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,5 +18,7 @@ jobs:
           to: -4587543996
           token: 7807568169:AAFEHwd6wujmyeC4j8VBQl-61H-HjxU4-z8
           message: |
+          if: failure()
             Сообщение (строка #1)
+          else:
             Сообщение (строка #2)
